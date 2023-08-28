@@ -1,0 +1,246 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.header .navbar {
+    background: #fff;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+
+.topnav {
+    overflow: hidden;
+}
+.topnav a {
+    float: left;
+    display: block;
+    color: #4a4a4a;
+    text-align: center;
+    padding: 19px 10px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+
+.navbar-nav .nav-item:hover {
+    background-color: rgba(180, 190, 203, 0.4);
+}
+  
+
+
+.navbar .navbar-brand {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-right: 1rem;;
+    text-decoration: none;
+    white-space: nowrap;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    background: linear-gradient(54.09deg,#0348dd 2.03%,#8142f5 48.63%,#ee4dd4 96.22%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.topnav .nav-item {
+    float: right;
+}
+
+
+.container-main{
+    background: #fff;
+    border-radius: 0.25rem;
+    margin-bottom: 10px;
+}
+
+.container-color{
+    background: linear-gradient(to right,#3f5efb,#fc466b);
+}
+
+.ig-downloader{
+    padding: 20px;
+}
+
+.ig-downloader{
+    @media screen and (max-width: 640px) {
+        padding: 10px 5px;
+    }
+}  
+
+.tab-list{
+    margin-top: 1rem;
+    overflow: hidden;
+    border-radius: 4px;
+    width: 100%;
+    background: rgba(255,255,255,.24);
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.tab-menu {
+    @media screen and (max-width: 768px){
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.tab-list button {
+    background-color: transparent;
+    float: left;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    padding: 12px 16px;
+    transition: .3s;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    border-right: 1px solid rgba(255,255,255,.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.tab-list span {
+    float: left;
+    padding-left: 4px;
+}
+
+.tab-list button {
+    @media (max-width: 768px){
+        padding: 8px 4px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.ig-downloader .tab-heading .title {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 39px;
+}
+
+.ig-downloader .tab-heading .title {
+    @media (min-width: 768px){
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
+
+.ig-downloader .tab-heading .subtitle {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(255,255,255,.8);
+    margin-bottom: 0;
+}
+
+.ig-downloader .tab-heading .subtitle {
+    @media (min-width: 768px){
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 19px;
+        
+    }
+}
+
+.form-ig-control{
+    border-style: none;
+    width: 100%;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+
+.ig-downloader .tab-heading {
+    text-align: center;
+}
+
+.ig-downloader .tab-heading {
+    @media (min-width: 768px){
+        margin-top: 0.5rem;
+    }
+}
+
+
+
+
+.inputContainer{
+    display: flex;
+    border-width: 1px;
+    border-radius: 0.75rem;
+    align-items: center;
+    flex: 1 1 0%;
+    appearance: none;
+    background-color: #fff;
+    border-color: #6b7280;
+    font-size: 1rem;
+    line-height: 0.5rem;
+    padding: 0.5rem 0.75rem;
+   
+}
+
+*:focus {
+    outline: none;
+}
+
+.igSubmitForm{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    --tw-ring-offset-shadow: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+    
+}
+
+.pasteBtn{
+    justify-content: center;
+    align-items: center;
+    text-decoration-line: none;
+    --tw-text-opacity: 1;
+    color: rgb(24 25 27);
+    font-weight: 500;
+    border-radius: 0.5rem;
+    --tw-bg-opacity: 1;
+    grid-auto-flow: column;
+    background-color: rgb(247 247 248);
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    border: none;
+}
+
+.igSubmitForm  {
+    @media (min-width: 768px){
+    flex-direction: row;
+    max-width: 45rem;
+    }
+}
+
+.downloadBtn  {
+    @media (min-width: 768px){
+       margin: 5px !important;
+    }
+}
+
+.downloadBtn{
+    color: rgb(255 255 255);
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    background-color: rgb(0 152 253);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    border: none;
+}
+
+
