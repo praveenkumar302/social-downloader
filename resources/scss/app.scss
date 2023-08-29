@@ -46,6 +46,14 @@
     float: right;
 }
 
+.svgIcon24{
+    height: 24px;
+    width: 24px;
+}
+
+
+
+
 
 .container-main{
     background: #fff;
@@ -213,6 +221,8 @@
     display: flex;
     gap: 0.5rem;
     border: none;
+    width: 10%;
+
 }
 
 .igSubmitForm  {

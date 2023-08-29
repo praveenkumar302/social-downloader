@@ -12014,6 +12014,11 @@ textarea.form-control-lg {
   float: right;
 }
 
+.svgIcon24 {
+  height: 24px;
+  width: 24px;
+}
+
 .container-main {
   background: #fff;
   border-radius: 0.25rem;
@@ -12174,6 +12179,7 @@ textarea.form-control-lg {
   display: flex;
   gap: 0.5rem;
   border: none;
+  width: 10%;
 }
 
 @media (min-width: 768px) {

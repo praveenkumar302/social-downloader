@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>Social Download</title>
 
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/index.js') }}" defer></script>
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Fonts -->
@@ -59,8 +60,14 @@
             <div class="ig-downloader">
                 <div class="row">
                     <div class="tab-list">
-                    <button class="tool-item" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.1001 12V10.52C9.1001 8.60999 10.4501 7.83999 12.1001 8.78999L13.3801 9.52999L14.6601 10.27C16.3101 11.22 16.3101 12.78 14.6601 13.73L13.3801 14.47L12.1001 15.21C10.4501 16.16 9.1001 15.38 9.1001 13.48V12Z" stroke="#ffffff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="d-none d-md-block">Video</span></button>
-                    <button class="tool-item" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.1001 12V10.52C9.1001 8.60999 10.4501 7.83999 12.1001 8.78999L13.3801 9.52999L14.6601 10.27C16.3101 11.22 16.3101 12.78 14.6601 13.73L13.3801 14.47L12.1001 15.21C10.4501 16.16 9.1001 15.38 9.1001 13.48V12Z" stroke="#ffffff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="d-none d-md-block">Photo</span></button>
+                    <button class="tool-item" >
+                        <img src="{{ asset('assets/images/video.svg') }}"  class="svgIcon24" alt="logo"  />
+                        <span class="d-none d-md-block">Video</span>
+                    </button>
+                    <button class="tool-item" >
+                    <img src="{{ asset('assets/images/photo.svg') }}"  class="svgIcon24" alt="logo"  />
+                        <span class="d-none d-md-block">Photo</span>
+                    </button>  
                     <button class="tool-item" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.1001 12V10.52C9.1001 8.60999 10.4501 7.83999 12.1001 8.78999L13.3801 9.52999L14.6601 10.27C16.3101 11.22 16.3101 12.78 14.6601 13.73L13.3801 14.47L12.1001 15.21C10.4501 16.16 9.1001 15.38 9.1001 13.48V12Z" stroke="#ffffff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="d-none d-md-block">Reels</span></button>
                     <button class="tool-item" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.1001 12V10.52C9.1001 8.60999 10.4501 7.83999 12.1001 8.78999L13.3801 9.52999L14.6601 10.27C16.3101 11.22 16.3101 12.78 14.6601 13.73L13.3801 14.47L12.1001 15.21C10.4501 16.16 9.1001 15.38 9.1001 13.48V12Z" stroke="#ffffff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="d-none d-md-block">Stories</span></button>
                     <button class="tool-item" ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.1001 12V10.52C9.1001 8.60999 10.4501 7.83999 12.1001 8.78999L13.3801 9.52999L14.6601 10.27C16.3101 11.22 16.3101 12.78 14.6601 13.73L13.3801 14.47L12.1001 15.21C10.4501 16.16 9.1001 15.38 9.1001 13.48V12Z" stroke="#ffffff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="d-none d-md-block">IGTV</span></button>
@@ -76,16 +83,21 @@
 
                 <form class="igSubmitForm mx-auto pb-3">
                     <div class="relative mt-2 p-1 inputContainer">
-                        <input name="content-url" type="url" placeholder="Paste an Instagram video URL here" required="" class="form-ig-control pl-14 pr-2" value="">
+                        <input name="content-url" type="url" placeholder="Paste Url Instagram" required class="form-ig-control pl-14 pr-2" value="wsd">
                         <button type="button" class="pasteBtn cursor-pointer appearance-none transition group inline-grid grid-flow-col  rounded-lg home:nav:rounded-full py-2 px-5 gap-2flex items-center justify-center py-3 text-sm">
-                        <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5951 2.00008H11.9284C12.282 2.00008 12.6211 2.14056 12.8712 2.39061C13.1212 2.64065 13.2617 2.97979 13.2617 3.33341V14.0001C13.2617 14.3537 13.1212 14.6928 12.8712 14.9429C12.6211 15.1929 12.282 15.3334 11.9284 15.3334H2.59505C2.24143 15.3334 1.90229 15.1929 1.65224 14.9429C1.40219 14.6928 1.26172 14.3537 1.26172 14.0001V3.33341C1.26172 2.97979 1.40219 2.64065 1.65224 2.39061C1.90229 2.14056 2.24143 2.00008 2.59505 2.00008H3.92839M10.5951 2.00008C10.5951 2.73646 9.9981 3.33341 9.26172 3.33341H5.26172C4.52534 3.33341 3.92839 2.73646 3.92839 2.00008M10.5951 2.00008C10.5951 1.2637 9.9981 0.666748 9.26172 0.666748H5.26172C4.52534 0.666748 3.92839 1.2637 3.92839 2.00008M4.59505 7.33341H9.92839M4.59505 10.6667H9.92839" stroke="#696F84" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                        Paste
-                        </button>
+                        <img src="{{ asset('assets/images/paste.svg') }}"  class="svgIcon24" alt="logo"  />
+                        Paste</button>
                     </div>
-                    <button type="submit" class="downloadBtn cursor-pointer appearance-none transition group  relative my-3 flex items-center ">Download</button>
+                    <button type="submit" class="downloadBtn cursor-pointer appearance-none transition group  relative my-3 flex items-center " (onclick)="searchVideoDwnld()">Download</button>
                 </form>
+
+                <div class="container">
+                    <div class="download" id="download"></div>
+                </div>
             </div>
         </div>
     </div>
+
+    
     </body>
 </html>

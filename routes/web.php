@@ -19,4 +19,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/api/search', [SocialDownloadContoller::class, 'instaDownload']);
+Route::post('/api/search', [SocialDownloadContoller::class, 'instaDownload']);
