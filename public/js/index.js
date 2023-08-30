@@ -10813,7 +10813,7 @@ function searchVideoDwnld() {
     method: 'POST',
     // or 'POST', 'PUT', etc.
     data: {
-      url: 'https://www.instagram.com/reel/CwhBoshqU23/?igshid=MzRlODBiNWFlZA=='
+      url: 'https://www.instagram.com/p/CvtqZ1pMX-o/?img_index=1'
       // token:  $("input[name='_token']").val()
     },
 
@@ -10825,6 +10825,8 @@ function searchVideoDwnld() {
     // Expected data type of the response
     success: function success(response) {
       // Code to handle the successful response
+      console.log(response.succeess.data);
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#download-element').html(response.succeess.data);
     },
     error: function error(xhr, status, _error) {
       // Code to handle errors

@@ -81,23 +81,27 @@
                     </div>
                 </div>
 
-                <form class="igSubmitForm mx-auto pb-3">
+               
+
+                <form class="igSubmitForm mx-auto pb-3" >
                     <div class="relative mt-2 p-1 inputContainer">
-                        <input name="content-url" type="url" placeholder="Paste Url Instagram" required class="form-ig-control pl-14 pr-2" value="wsd">
+                        <input name="content-url" type="text" placeholder="Paste Url Instagram" required class="form-ig-control pl-14 pr-2" required value="">
                         <button type="button" class="pasteBtn cursor-pointer appearance-none transition group inline-grid grid-flow-col  rounded-lg home:nav:rounded-full py-2 px-5 gap-2flex items-center justify-center py-3 text-sm">
                         <img src="{{ asset('assets/images/paste.svg') }}"  class="svgIcon24" alt="logo"  />
                         Paste</button>
                     </div>
-                    <button type="submit" class="downloadBtn cursor-pointer appearance-none transition group  relative my-3 flex items-center " (onclick)="searchVideoDwnld()">Download</button>
+                    <button type="submit" class="downloadBtn cursor-pointer appearance-none transition group  relative my-3 flex items-center " onclick="searchVideoDwnld()">Download</button>
                 </form>
 
                 <div class="container">
-                    <div class="download" id="download"></div>
+                    <div class="download" id="download-element"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    
+    <!-- <div id="download-element"></div> -->
+
+
     </body>
 </html>

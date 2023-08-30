@@ -12,8 +12,9 @@ class SocialDownloadContoller extends Controller
     // $endpoint = "https://www.instagram.com/p/CwIYJgkMq-Q?__a=1&__d=dis";
     // $endpoint = "https://instagram.com/stories/virat.kohli/3180126433460034227?__a=1&__d=dis";  
     // $endpoint = "https://www.instagram.com/reel/Cwh0xLQt9JP?__a=1&__d=dis";  //Reels
-    public function instaDownload(){
-        $url = 'https://www.instagram.com/reel/CwhBoshqU23/?igshid=MzRlODBiNWFlZA==';
+    public function instaDownload(Request $request){
+        $url = $request->url;
+        // $url = 'https://www.instagram.com/reel/CwhBoshqU23/?igshid=MzRlODBiNWFlZA==';
         $url = str_replace(' ', '', $url);
         $url = explode('/?', $url)[0];
         $endpoint = $url.''.'?__a=1&__d=dis'; 
@@ -28,15 +29,18 @@ class SocialDownloadContoller extends Controller
             {
                 if(isset($edge->node->is_video) && $edge->node->is_video){
                     $json =[
-                        'url'=>$edge->node->video_url,
+                        'url'=>$edge->node->video_url.'.mp4',
                         'type'=>$type,
-                        'thumbnail'=>$edge->node->display_url 
+                        'media_type'=>'video',
+                        'thumbnail'=>$edge->node->display_url.'.png' 
                     ];
                     array_push($imageList, $json);
                 }else{
                     $json =[
-                        'url'=>$edge->node->display_url,
-                        'type'=>$type
+                        'url'=>$edge->node->display_url.'.png',
+                        'type'=>$type,
+                        'media_type'=>'image',
+                        'thumbnail'=>''
                     ];
                     array_push($imageList, $json); 
                 }
@@ -45,8 +49,10 @@ class SocialDownloadContoller extends Controller
         else if($type=='GraphImage'){ // Images
             $url = $jsonData->graphql->shortcode_media->display_url;
             $json =[
-                'url'=>$url,
+                'url'=>$url.'.png',
                 'type'=>$type,
+                'media_type'=>'image',
+                'thumbnail'=>''
             ];
             array_push($imageList, $json);  
             
@@ -54,13 +60,23 @@ class SocialDownloadContoller extends Controller
         else if($type == 'GraphVideo'){ //  Videos
             $shortcodeMedia = $jsonData->graphql->shortcode_media;
              $json =[
-                'url'=>$shortcodeMedia->video_url,
-                'thumbnail'=>$shortcodeMedia->thumbnail_src,
+                'url'=>$shortcodeMedia->video_url.'.mp4',
+                'thumbnail'=>$shortcodeMedia->thumbnail_src.'.png',
+                'media_type'=>'video',
                 'type'=>$type,
             ];
             array_push($imageList, $json);  
         }
-        return response()->json(['succeess' => $imageList]);
+
+
+        $view = view('instagram', compact('imageList'))->render();
+     
+        $data =[
+            'data'=>$view,
+            'status'=>'Ok'
+        ];
+
+        return response()->json(['succeess' => $data]);
     } 
 
 

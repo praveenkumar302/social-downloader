@@ -6,7 +6,7 @@ import $ from "jquery";
             url: 'http://127.0.0.1:8000/api/search',
             method: 'POST', // or 'POST', 'PUT', etc.
             data: { 
-                url: 'https://www.instagram.com/reel/CwhBoshqU23/?igshid=MzRlODBiNWFlZA==',
+                url: 'https://www.instagram.com/p/CvtqZ1pMX-o/?img_index=1',
                 // token:  $("input[name='_token']").val()
             }, // Data to send to the server
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -14,10 +14,13 @@ import $ from "jquery";
             dataType: 'json', // Expected data type of the response
             success: function(response) {
                 // Code to handle the successful response
+                console.log(response.succeess.data)
+                $('#download-element').html(response.succeess.data);
             },
             error: function(xhr, status, error) {
                 // Code to handle errors
             }
+
         });
     }
 
