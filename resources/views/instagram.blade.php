@@ -6,7 +6,7 @@
                 <div class="download-content">
                     <div class="download-top">
                         <div class="left">
-                        <img src="https://d.rapidcdn.app/snapinsta?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL3Njb250ZW50LmNkbmluc3RhZ3JhbS5jb20vdi90NTEuMjg4NS0xOS8zNDg5NTQ5MzNfOTM3MTY4NTEwODM2NzM4Xzc3Njk5NTgyMTM2NTQyMDA3NDdfbi5qcGc_c3RwPWRzdC1qcGdfczE1MHgxNTAmX25jX2h0PXNjb250ZW50LmNkbmluc3RhZ3JhbS5jb20mX25jX2NhdD0xJl9uY19vaGM9OTFjN1pqUmY5R2tBWDhxRUFJNSZlZG09QVBzMTdDVUJBQUFBJmNjYj03LTUmb2g9MDBfQWZEWFNTN3Rmb2tkQjU3aXQ1M2EzOFBIdE1FbDFiQkpFbWpwZE1qLVphc1ZaZyZvZT02NEY0RkUyQSZfbmNfc2lkPTEwZDEzYiIsImZpbGVuYW1lIjoiU25hcGluc3RhLmFwcF8zNDg5NTQ5MzNfOTM3MTY4NTEwODM2NzM4Xzc3Njk5NTgyMTM2NTQyMDA3NDdfbi5qcGcifQ.M1o5KCQpxIEiroCRUwPeJLxyTuV2deChWxXsgjCSsFY" alt="avatar">thenottoriousmme
+                        <img src="{{$image['thumbnail']}}" alt="avatar">thenottoriousmme
                         </div>
                     </div>
                     <div class="media-box">
@@ -24,7 +24,7 @@
                 <div class="download-content">
                     <div class="download-top">
                         <div class="left">
-                        <img src="https://d.rapidcdn.app/snapinsta?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL3Njb250ZW50LmNkbmluc3RhZ3JhbS5jb20vdi90NTEuMjg4NS0xOS8zNDg5NTQ5MzNfOTM3MTY4NTEwODM2NzM4Xzc3Njk5NTgyMTM2NTQyMDA3NDdfbi5qcGc_c3RwPWRzdC1qcGdfczE1MHgxNTAmX25jX2h0PXNjb250ZW50LmNkbmluc3RhZ3JhbS5jb20mX25jX2NhdD0xJl9uY19vaGM9OTFjN1pqUmY5R2tBWDhxRUFJNSZlZG09QVBzMTdDVUJBQUFBJmNjYj03LTUmb2g9MDBfQWZEWFNTN3Rmb2tkQjU3aXQ1M2EzOFBIdE1FbDFiQkpFbWpwZE1qLVphc1ZaZyZvZT02NEY0RkUyQSZfbmNfc2lkPTEwZDEzYiIsImZpbGVuYW1lIjoiU25hcGluc3RhLmFwcF8zNDg5NTQ5MzNfOTM3MTY4NTEwODM2NzM4Xzc3Njk5NTgyMTM2NTQyMDA3NDdfbi5qcGcifQ.M1o5KCQpxIEiroCRUwPeJLxyTuV2deChWxXsgjCSsFY" alt="avatar">thenottoriousmme
+                        <img src="{{$image['url']}}" alt="avatar">thenottoriousmme
                         </div>
                     </div>
                     <div class="media-box">

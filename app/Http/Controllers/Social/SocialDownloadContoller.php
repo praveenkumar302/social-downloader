@@ -13,6 +13,7 @@ class SocialDownloadContoller extends Controller
     // $endpoint = "https://instagram.com/stories/virat.kohli/3180126433460034227?__a=1&__d=dis";  
     // $endpoint = "https://www.instagram.com/reel/Cwh0xLQt9JP?__a=1&__d=dis";  //Reels
     public function instaDownload(Request $request){
+
         $url = $request->url;
         // $url = 'https://www.instagram.com/reel/CwhBoshqU23/?igshid=MzRlODBiNWFlZA==';
         $url = str_replace(' ', '', $url);
@@ -69,6 +70,7 @@ class SocialDownloadContoller extends Controller
         }
 
 
+        // dd($imageList);
         $view = view('instagram', compact('imageList'))->render();
      
         $data =[

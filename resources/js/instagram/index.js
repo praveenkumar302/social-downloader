@@ -1,12 +1,13 @@
 import $ from "jquery";
 
 
-    function searchVideoDwnld(){
+    window.searchVideoDwnld = () =>{
+      
         $.ajax({
             url: 'http://127.0.0.1:8000/api/search',
             method: 'POST', // or 'POST', 'PUT', etc.
             data: { 
-                url: 'https://www.instagram.com/p/CvtqZ1pMX-o/?img_index=1',
+                url: $('.form-ig-control').value?$('.form-ig-control').value:'https://www.instagram.com/p/CvtqZ1pMX-o/?img_index=1',
                 // token:  $("input[name='_token']").val()
             }, // Data to send to the server
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -25,8 +26,22 @@ import $ from "jquery";
     }
 
 
-    searchVideoDwnld();
+    // window.searchVideoDwnld();
 
+    window.pasteUrl = async () =>{
+        const text = await navigator.clipboard.readText();
+        console.log(text);
+        $('#PasteBtn').css("display","none");
+        $('#clearBtn').css("display","flex");
+        $(".form-ig-control").val(text);
+        // $('.form-ig-control').value(text);
+    }
+
+    window.ClearUrl = () =>{
+        $(".form-ig-control").val('');
+        $('#PasteBtn').css("display","flex")
+        $('#clearBtn').css("display","none")
+    }
 
     function disableInspect(){
         $(document).bind("contextmenu",function(e) {

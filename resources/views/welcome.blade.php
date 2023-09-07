@@ -83,14 +83,21 @@
 
                
 
-                <form class="igSubmitForm mx-auto pb-3" >
+                <form class="igSubmitForm mx-auto pb-3"  onsubmit="searchVideoDwnld();return false">
                     <div class="relative mt-2 p-1 inputContainer">
-                        <input name="content-url" type="text" placeholder="Paste Url Instagram" required class="form-ig-control pl-14 pr-2" required value="">
-                        <button type="button" class="pasteBtn cursor-pointer appearance-none transition group inline-grid grid-flow-col  rounded-lg home:nav:rounded-full py-2 px-5 gap-2flex items-center justify-center py-3 text-sm">
+                        <input name="content-url" type="text" placeholder="Paste Url Instagram" required class="form-ig-control pl-14 pr-2"  value="">
+                        <button onclick="pasteUrl()" type="button" class="pasteBtn cursor-pointer appearance-none transition group inline-grid grid-flow-col  rounded-lg home:nav:rounded-full py-2 px-5 gap-2flex items-center justify-center py-3 text-sm" id="PasteBtn">
                         <img src="{{ asset('assets/images/paste.svg') }}"  class="svgIcon24" alt="logo"  />
                         Paste</button>
+
+                        <button style="display:none" onclick="ClearUrl()" type="button" class="pasteBtn cursor-pointer appearance-none transition group inline-grid grid-flow-col  rounded-lg home:nav:rounded-full py-2 px-5 gap-2flex items-center justify-center py-3 text-sm" id="clearBtn">
+                        <img src="{{ asset('assets/images/clear.svg') }}"  class="svgIcon24" alt="logo"  />
+                        Clear</button>
+
+
+                        
                     </div>
-                    <button type="submit" class="downloadBtn cursor-pointer appearance-none transition group  relative my-3 flex items-center " onclick="searchVideoDwnld()">Download</button>
+                    <button type="submbit" class="downloadBtn cursor-pointer appearance-none transition group  relative my-3 flex items-center " >Download</button>
                 </form>
 
                 <div class="container">
