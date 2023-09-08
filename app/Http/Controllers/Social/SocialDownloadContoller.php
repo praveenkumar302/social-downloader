@@ -6,13 +6,21 @@ use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 
-
+use Illuminate\Support\Facades\Storage;
 class SocialDownloadContoller extends Controller
 {
     // $endpoint = "https://www.instagram.com/p/CwIYJgkMq-Q?__a=1&__d=dis";
     // $endpoint = "https://instagram.com/stories/virat.kohli/3180126433460034227?__a=1&__d=dis";  
     // $endpoint = "https://www.instagram.com/reel/Cwh0xLQt9JP?__a=1&__d=dis";  //Reels
     public function instaDownload(Request $request){
+
+
+        
+        // file_put_contents(public_path($destinationPath), $contents);
+        // dd($file);
+        // $uploaded_file = new UploadedFile($file, $info['basename']);
+        // dd($uploaded_file);
+
 
         $url = $request->url;
         // $url = 'https://www.instagram.com/reel/CwhBoshqU23/?igshid=MzRlODBiNWFlZA==';
@@ -70,13 +78,21 @@ class SocialDownloadContoller extends Controller
         }
 
 
-        // dd($imageList);
+        dd($imageList);
         $view = view('instagram', compact('imageList'))->render();
      
         $data =[
             'data'=>$view,
             'status'=>'Ok'
         ];
+        
+
+        // $url = 'https://pay.google.com/about/static/images/social/og_image.jpg';
+        // $info = pathinfo($url);
+        // $file_content = file_get_contents($url);
+        // $destinationPath = 'images';
+        // $file = '/tmp/' . $info['basename'];
+        // Storage::disk('public')->put($file, $file_content);
 
         return response()->json(['succeess' => $data]);
     } 

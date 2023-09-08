@@ -12290,3 +12290,23 @@ textarea.form-control-lg {
   width: 100%;
   padding-top: 100%;
 }
+
+#dwnLoading {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingImg {
+  width: 12%;
+}
+@media screen and (max-width: 768px) {
+  .loadingImg {
+    width: 20%;
+  }
+}
+
+.dwnldText {
+  color: white;
+  text-align: center;
+}

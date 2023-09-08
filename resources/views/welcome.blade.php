@@ -93,12 +93,15 @@
                         <button style="display:none" onclick="ClearUrl()" type="button" class="pasteBtn cursor-pointer appearance-none transition group inline-grid grid-flow-col  rounded-lg home:nav:rounded-full py-2 px-5 gap-2flex items-center justify-center py-3 text-sm" id="clearBtn">
                         <img src="{{ asset('assets/images/clear.svg') }}"  class="svgIcon24" alt="logo"  />
                         Clear</button>
-
-
-                        
                     </div>
                     <button type="submbit" class="downloadBtn cursor-pointer appearance-none transition group  relative my-3 flex items-center " >Download</button>
+                   
                 </form>
+                <div id="dwnLoading" class="row"> 
+                    <div class="dwnldText col-md-12">We are downloading the profile. Please wait :)</div>
+                    <img class="loadingImg" src="{{ asset('assets/images/loader.gif') }}"  alt="logo"  />
+                </div>
+              
 
                 <div class="container">
                     <div class="download" id="download-element"></div>

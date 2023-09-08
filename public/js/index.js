@@ -10812,15 +10812,14 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 window.searchVideoDwnld = function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#dwnLoading').css('display', 'flex');
   jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({
     url: 'http://127.0.0.1:8000/api/search',
     method: 'POST',
     // or 'POST', 'PUT', etc.
     data: {
       url: jquery__WEBPACK_IMPORTED_MODULE_0___default()('.form-ig-control').value ? jquery__WEBPACK_IMPORTED_MODULE_0___default()('.form-ig-control').value : 'https://www.instagram.com/p/CvtqZ1pMX-o/?img_index=1'
-      // token:  $("input[name='_token']").val()
     },
-
     // Data to send to the server
     headers: {
       'X-CSRF-TOKEN': jquery__WEBPACK_IMPORTED_MODULE_0___default()('meta[name="csrf-token"]').attr('content')
@@ -10828,12 +10827,14 @@ window.searchVideoDwnld = function () {
     dataType: 'json',
     // Expected data type of the response
     success: function success(response) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#dwnLoading').css('display', 'none');
       // Code to handle the successful response
       console.log(response.succeess.data);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#download-element').html(response.succeess.data);
     },
     error: function error(xhr, status, _error) {
       // Code to handle errors
+      console.log(xhr, status, _error);
     }
   });
 };

@@ -2,24 +2,24 @@ import $ from "jquery";
 
 
     window.searchVideoDwnld = () =>{
-      
+        $('#dwnLoading').css('display','flex');
         $.ajax({
             url: 'http://127.0.0.1:8000/api/search',
             method: 'POST', // or 'POST', 'PUT', etc.
             data: { 
                 url: $('.form-ig-control').value?$('.form-ig-control').value:'https://www.instagram.com/p/CvtqZ1pMX-o/?img_index=1',
-                // token:  $("input[name='_token']").val()
             }, // Data to send to the server
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-
             dataType: 'json', // Expected data type of the response
             success: function(response) {
+                $('#dwnLoading').css('display','none');
                 // Code to handle the successful response
                 console.log(response.succeess.data)
                 $('#download-element').html(response.succeess.data);
             },
             error: function(xhr, status, error) {
                 // Code to handle errors
+                console.log(xhr, status, error);
             }
 
         });
